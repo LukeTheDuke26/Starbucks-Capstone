@@ -57,3 +57,32 @@ def segment_data(merged_data):
     labels = ['Young', 'Middle-aged', 'Senior']
     merged_data['age_group'] = pd.cut(merged_data['age'], bins=bins, labels=labels, right=False)
     return merged_data
+
+
+def preprocess_data(portfolio, profile, transcript):
+    """Process the data and merge the datasets.
+    
+    Args:
+        portfolio (DataFrame): The portfolio dataset.
+        profile (DataFrame): The profile dataset.
+        transcript (DataFrame): The transcript dataset.
+        
+    Returns:
+        DataFrame: The merged and processed dataset.
+    """
+    # Clean the data
+    profile_cleaned, transcript_cleaned = clean_data(profile, transcript)
+    
+    # Merge the datasets
+    merged_data = merge_data(transcript_cleaned, profile_cleaned, portfolio)
+    
+    # Segment the data
+    merged_data = segment_data(merged_data)
+    
+    return merged_data
+
+
+
+
+
+    
