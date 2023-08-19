@@ -1,3 +1,27 @@
+"""
+Data Preparation Module for Starbucks Capstone Challenge
+
+This module contains functions for loading and preprocessing the Starbucks datasets.
+Functions include loading the data, cleaning the profile and transcript datasets,
+merging the datasets, and segmenting users based on age. 
+
+This module allows the preparation of datasets to be used in modeling and analysis 
+phases of the Starbucks Capstone Challenge.
+
+Example:
+    portfolio, profile, merged_data = preprocess_data()
+
+Attributes:
+    DATA_PATH (str): The directory path where the dataset files are located.
+
+Functions:
+    load_data: Load the datasets from the specified paths.
+    clean_data: Clean the profile and transcript datasets.
+    merge_data: Merge the datasets to create a comprehensive dataframe.
+    segment_data: Segment the users in the merged dataset based on age.
+    preprocess_data: Process the data and merge the datasets.
+"""
+
 import pandas as pd
 
 DATA_PATH = "/Users/luca/Documents/Udacity - all learning materials/Capstone Project - Starbuck/Data/"
