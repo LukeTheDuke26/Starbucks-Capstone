@@ -20,19 +20,22 @@ Functions:
     main: The main function to run the entire pipeline.
 """
 
+import pandas as pd
 from data_preparation import preprocess_data
 from ml_modeling import train_model, evaluate_model
 from recommendation_engine import RecommendationEngine
-import pandas as pd
-
+from data_preparation import load_data
 
 def main():
     """
     Main function to run the entire pipeline.
     It preprocesses the data, trains a model, evaluates it, and demonstrates a recommendation.
     """
+    # Load the datasets
+    portfolio, profile, transcript = load_data()
+    
     # Step 1: Preprocess the data
-    portfolio, profile, merged_data = preprocess_data()
+    merged_data = preprocess_data(portfolio, profile, transcript)
     
     # Step 2: Train the model
     lr_model, X_test, y_test, X_train = train_model(merged_data)

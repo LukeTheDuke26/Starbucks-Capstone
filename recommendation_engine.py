@@ -10,6 +10,9 @@ Classes:
     for training the model, making predictions, and recommending offers.
 """
 
+import pandas as pd
+
+
 class RecommendationEngine:
     """
     This class is responsible for building the recommendation engine model.
